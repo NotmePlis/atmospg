@@ -1,41 +1,23 @@
-# Codemagic: build APK rilis bertanda tangan untuk Atmosphere PG Companion.
-# Letakkan di root repo (folder yang berisi gradlew). Di Codemagic pilih "codemagic.yaml" sebagai konfigurasi.
-#
-# Persiapan sekali saja:
-#  1. Codemagic -> Teams -> Code signing identities -> Android keystores -> unggah atmosphere-release.jks
-#     (hasil scripts/make-keystore.sh), beri nama referensi: atmosphere_release
-#     Pakai kunci YANG SAMA dengan APK yang sudah terpasang, kalau tidak pembaruan akan ditolak Android.
-#  2. (opsional) ganti email penerima di bawah.
 workflows:
-  android-release:
-    name: Android Release APK
+  android-debug:
+    name: Android Debug APK
     instance_type: linux_x2
     max_build_duration: 30
     environment:
-      android_signing:
-        - atmosphere_release        # nama referensi keystore di Codemagic
       java: 17
     scripts:
-      - name: Siapkan keystore.properties dari signing Codemagic
-        script: |
-          cat > "$CM_BUILD_DIR/keystore.properties" <<EOF
-          storeFile=$CM_KEYSTORE_PATH
-          storePassword=$CM_KEYSTORE_PASSWORD
-          keyAlias=$CM_KEY_ALIAS
-          keyPassword=$CM_KEY_PASSWORD
-          EOF
       - name: Unit test
         script: |
           chmod +x ./gradlew
           ./gradlew testDebugUnitTest
-      - name: Build APK rilis
-        script: ./gradlew assembleRelease
+      - name: Build APK debug
+        script: ./gradlew assembleDebug
     artifacts:
-      - app/build/outputs/apk/release/*.apk
+      - app/build/outputs/apk/debug/*.apk
     publishing:
       email:
         recipients:
-          - gersaas@apku.me
+          - aryoda69@gmail.com
         notify:
           success: true
           failure: true
