@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/historyRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:id="@+id/historyHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/segGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:checkedButton="@+id/segTx"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/segTx"
+                style="@style/Widget.AtmospherePG.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="40dp"
+                android:text="Transaksi" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/segTech"
+                style="@style/Widget.AtmospherePG.Button.Outlined"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="40dp"
+                android:text="Log teknis" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <HorizontalScrollView
+            android:id="@+id/filterScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:scrollbars="none">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:selectionRequired="true"
+                app:singleLine="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAll"
+                    style="@style/Widget.AtmospherePG.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Semua" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipOk"
+                    style="@style/Widget.AtmospherePG.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Berhasil" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPending"
+                    style="@style/Widget.AtmospherePG.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pending" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipReview"
+                    style="@style/Widget.AtmospherePG.Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perlu Diperiksa" />
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:id="@+id/diagHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:minHeight="40dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/Text.AtmospherePG.Section"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Diagnostik"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/diagChevron"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_expand"
+                app:tint="@color/on_surface_variant" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDiag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_panel"
+            android:lineSpacingMultiplier="1.15"
+            android:padding="12dp"
+            android:textColor="@color/on_surface"
+            android:textIsSelectable="true"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLogs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false" />
+
+        <TextView
+            android:id="@+id/emptyHistory"
+            style="@style/Text.AtmospherePG.Body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="24dp"
+            android:text="Belum ada data"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>
