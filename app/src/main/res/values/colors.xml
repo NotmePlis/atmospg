@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand">#2F5BFF</color>
+    <color name="on_brand">#FFFFFF</color>
+    <color name="ic_bg">#2563EB</color>
+
+    <color name="bg_app">#F5F7FB</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_alt">#EEF2F9</color>
+    <color name="on_surface">#0B1220</color>
+    <color name="on_surface_variant">#5B6780</color>
+    <color name="outline">#E3E8F1</color>
+
+    <!-- Teks status (kontras ≥ 4.5:1 di atas container masing-masing) -->
+    <color name="status_ok">#047857</color>
+    <color name="status_warn">#92400E</color>
+    <color name="status_bad">#B91C1C</color>
+    <color name="status_info">#1D4ED8</color>
+    <color name="status_neutral">#5B6780</color>
+    <color name="container_ok">#D8F5E8</color>
+    <color name="container_warn">#FDF0CC</color>
+    <color name="container_bad">#FDE1E1</color>
+    <color name="container_info">#DDE7FF</color>
+    <color name="container_neutral">#E8EDF6</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="navy">#0F172A</color>
+
+    <bool name="light_bars">true</bool>
+</resources>

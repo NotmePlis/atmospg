@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand">#6C94FF</color>
+    <color name="on_brand">#07123A</color>
+
+    <color name="bg_app">#0A0F1C</color>
+    <color name="surface">#111828</color>
+    <color name="surface_alt">#182136</color>
+    <color name="on_surface">#F1F5FB</color>
+    <color name="on_surface_variant">#8E9BB5</color>
+    <color name="outline">#1F2A40</color>
+
+    <color name="status_ok">#4ADE9C</color>
+    <color name="status_warn">#FBBF24</color>
+    <color name="status_bad">#F87171</color>
+    <color name="status_info">#7AA7FF</color>
+    <color name="status_neutral">#8E9BB5</color>
+    <color name="container_ok">#0E2A22</color>
+    <color name="container_warn">#2D2410</color>
+    <color name="container_bad">#321619</color>
+    <color name="container_info">#15233F</color>
+    <color name="container_neutral">#1A2338</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="navy">#0F172A</color>
+
+    <bool name="light_bars">false</bool>
+</resources>

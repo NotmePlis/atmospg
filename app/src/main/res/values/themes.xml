@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.AtmospherePG" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand</item>
+        <item name="colorOnPrimary">@color/on_brand</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
+        <item name="colorOutline">@color/outline</item>
+        <item name="android:colorBackground">@color/bg_app</item>
+        <item name="android:statusBarColor">@color/bg_app</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">@bool/light_bars</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">@bool/light_bars</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="materialCardViewStyle">@style/Widget.AtmospherePG.Card</item>
+        <item name="materialButtonStyle">@style/Widget.AtmospherePG.Button</item>
+        <item name="bottomNavigationStyle">@style/Widget.AtmospherePG.BottomNav</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.AtmospherePG.Button.Outlined</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.AtmospherePG.Button</item>
+    </style>
+
+    <style name="Widget.AtmospherePG.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">18dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/outline</item>
+        <item name="cardBackgroundColor">@color/surface</item>
+    </style>
+
+    <style name="ShapeAppearance.AtmospherePG.Button" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">14dp</item>
+    </style>
+
+    <style name="Text.AtmospherePG.Label" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">@color/on_surface_variant</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <!-- Tombol minimal 48dp (target sentuh) dan teks boleh turun baris agar tidak terpotong -->
+    <style name="Widget.AtmospherePG.Button" parent="Widget.Material3.Button">
+        <item name="android:stateListAnimator">@animator/press_scale</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:maxLines">3</item>
+    </style>
+    <style name="Widget.AtmospherePG.Button.Tonal" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:stateListAnimator">@animator/press_scale</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:maxLines">3</item>
+    </style>
+    <style name="Widget.AtmospherePG.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:stateListAnimator">@animator/press_scale</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:maxLines">3</item>
+    </style>
+    <style name="Widget.AtmospherePG.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:stateListAnimator">@animator/press_scale</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:maxLines">3</item>
+    </style>
+
+    <style name="Text.AtmospherePG.Title" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@color/on_surface</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="Text.AtmospherePG.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/on_surface_variant</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="Text.AtmospherePG.Section" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/on_surface</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="Widget.AtmospherePG.BottomNav" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemIconTint">@color/nav_item</item>
+        <item name="itemTextColor">@color/nav_item</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.AtmospherePG.ActiveIndicator</item>
+        <item name="android:elevation">0dp</item>
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+    <style name="Widget.AtmospherePG.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/container_info</item>
+    </style>
+
+    <!-- Bottom sheet: sudut atas membulat, backdrop meredup pelan, gerak masuk/keluar lembut. -->
+    <style name="ThemeOverlay.AtmospherePG.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.AtmospherePG.BottomSheet</item>
+        <item name="android:windowAnimationStyle">@style/Anim.AtmospherePG.Sheet</item>
+        <item name="android:backgroundDimAmount">0.45</item>
+    </style>
+    <style name="Widget.AtmospherePG.BottomSheet" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.AtmospherePG.Sheet</item>
+        <item name="backgroundTint">@color/surface</item>
+    </style>
+    <style name="ShapeAppearance.AtmospherePG.Sheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">24dp</item>
+        <item name="cornerSizeTopRight">24dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+    <style name="Anim.AtmospherePG.Sheet" parent="">
+        <item name="android:windowEnterAnimation">@anim/sheet_in</item>
+        <item name="android:windowExitAnimation">@anim/sheet_out</item>
+    </style>
+
+    <style name="Text.AtmospherePG.Caption" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">@color/on_surface_variant</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="Text.AtmospherePG.Overline" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textColor">@color/on_surface_variant</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="Text.AtmospherePG.Amount" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/on_surface</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="Text.AtmospherePG.Badge" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">11sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="Widget.AtmospherePG.Button.Compact" parent="Widget.AtmospherePG.Button.Tonal">
+        <item name="android:minHeight">36dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+    </style>
+    <style name="Widget.AtmospherePG.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipMinHeight">32dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="chipStrokeColor">@color/outline</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipBackgroundColor">@color/surface</item>
+    </style>
+</resources>

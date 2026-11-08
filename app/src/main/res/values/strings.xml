@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Atmosphere PG Companion</string>
+    <string name="title_settings">Pengaturan</string>
+    <string name="title_guide">Panduan izin</string>
+
+    <string name="main_subtitle">Penerus notifikasi pembayaran DANA ke server Atmosphere PG</string>
+    <string name="btn_settings">Pengaturan</string>
+    <string name="btn_guide">Panduan izin</string>
+    <string name="btn_retry">Coba Lagi</string>
+    <string name="label_log">Log terbaru</string>
+    <string name="log_empty">Belum ada aktivitas.</string>
+
+    <string name="settings_intro">Isi URL server dan token perangkat dari dashboard (QRIS &amp; Perangkat → buat token perangkat). Jangan pakai API key bot atau website.</string>
+    <string name="hint_url">URL server (mis. https://pg.contoh.com)</string>
+    <string name="hint_token">Token perangkat (dvc_…)</string>
+    <string name="btn_save">Simpan &amp; tes</string>
+    <string name="label_advanced">Lanjutan</string>
+    <string name="hint_device">ID perangkat</string>
+    <string name="hint_package">Package aplikasi DANA</string>
+    <string name="hint_keywords">Kata kunci pembayaran (regex)</string>
+    <string name="sw_keepalive">Mode andal (notifikasi persisten agar tidak dimatikan sistem)</string>
+    <string name="sw_http">Izinkan HTTP tanpa enkripsi (tidak disarankan)</string>
+    <string name="btn_clear">Hapus token &amp; berhenti</string>
+    <string name="advanced_note">Package dan kata kunci sebaiknya sama dengan DANA_PACKAGE dan PAYMENT_KEYWORDS di .env server. Notifikasi yang tidak lolos filter tidak dikirim.</string>
+
+    <string name="guide_intro">Agar notifikasi DANA terbaca terus, empat hal ini harus beres. Status diperbarui otomatis saat Anda kembali ke halaman ini.</string>
+    <string name="guide_1_title">1. Akses notifikasi</string>
+    <string name="guide_1_body">Aktifkan Atmosphere PG Companion di daftar akses notifikasi. Aplikasi hanya membaca notifikasi DANA dan membuang yang berisi OTP/PIN/sandi.\n\nAndroid 13+ (aplikasi dipasang manual): jika sakelar abu-abu atau muncul \"Pengaturan dibatasi\", buka Info aplikasi → menu ⋮ di kanan atas → \"Izinkan pengaturan terbatas\", lalu ulangi.</string>
+    <string name="btn_open_listener">Buka akses notifikasi</string>
+    <string name="btn_open_appinfo">Buka info aplikasi</string>
+    <string name="guide_2_title">2. Izin menampilkan notifikasi</string>
+    <string name="guide_2_body">Dipakai untuk notifikasi status \"Mode andal\" (Android 13+). Tanpa ini layanan tetap jalan, tetapi statusnya tersembunyi.</string>
+    <string name="btn_request_notif">Izinkan notifikasi</string>
+    <string name="guide_3_title">3. Baterai &amp; latar belakang</string>
+    <string name="guide_3_body">Setel baterai aplikasi ini ke \"Tidak dibatasi\" dan izinkan berjalan di latar belakang.\n\n• Xiaomi/Redmi/POCO: Info aplikasi → Penghemat baterai → Tanpa pembatasan; aktifkan Mulai otomatis; kunci aplikasi di Recent apps.\n• Oppo/Realme/Vivo: izinkan Mulai otomatis dan Aktivitas latar belakang.\n• Samsung: Baterai → Tidak dibatasi; keluarkan dari Aplikasi tidur.\n\nJangan \"Paksa berhenti\": itu mematikan akses notifikasi sampai aplikasi dibuka lagi.</string>
+    <string name="btn_battery">Minta pengecualian baterai</string>
+    <string name="guide_4_title">4. Notifikasi DANA</string>
+    <string name="guide_4_body">Pastikan notifikasi aplikasi DANA aktif (tidak dibisukan/diblokir) dan DANA sendiri tidak dibatasi baterainya. Notifikasi yang diblokir tidak pernah sampai ke aplikasi ini.</string>
+    <string name="btn_dana_notif">Buka pengaturan notifikasi DANA</string>
+    <string name="guide_final">Bukti akhir hanya satu: lakukan pembayaran nyata dengan nominal kecil, lalu lihat Log di halaman utama dan hasilnya di dashboard. Heartbeat hijau hanya membuktikan server terjangkau, bukan bahwa notifikasi DANA terbaca. Setelah Paksa berhenti, aplikasi tidak aktif lagi sampai dibuka manual; aplikasi mencatat jeda tersebut di Log, tetapi notifikasi yang lewat saat mati tidak bisa dipulihkan.</string>
+</resources>
